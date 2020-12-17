@@ -1,12 +1,12 @@
 {
   "type": "panel",
-  "name": "Grafana Panel Plugin Template",
-  "id": "myorgid-simple-panel",
+  "name": "bounding-boxes",
+  "id": "bounding-boxes",
 
   "info": {
-    "description": "Grafana Panel Plugin Template",
+    "description": "bounding-boxes",
     "author": {
-      "name": "Your Name"
+      "name": "koren hamra"
     },
     "keywords": ["panel", "template"],
     "logos": {
