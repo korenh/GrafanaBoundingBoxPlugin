@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "bounding-boxes",
-  "id": "bounding-boxes",
+  "name": "Anotation",
+  "id": "Anotation",
 
   "info": {
-    "description": "bounding-boxes",
+    "description": "Anotation",
     "author": {
       "name": "koren hamra"
     },
