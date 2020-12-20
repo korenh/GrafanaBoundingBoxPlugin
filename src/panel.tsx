@@ -13,8 +13,8 @@ const Dot ={
     height: 50,
   },
   data:{
-    text:'koren',
-    id:'koren'
+    text:'korennn',
+    id:'korennn'
   }
 }
 
