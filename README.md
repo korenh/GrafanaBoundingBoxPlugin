@@ -15,3 +15,13 @@ _Locate the build at the plugins directory_
 _Must restart container to see the plugin changes at grafana_
 
 - docker restart grafana
+
+_inside index file paste_
+*we do this so we can import Annotation from the module*
+
+fullpath -> ./node_modules/react-image-annotation/es/index.js
+
+export { default as defaultProps } from './components/defaultProps';
+export { default as Annotation } from './components/Annotation';
+
+
