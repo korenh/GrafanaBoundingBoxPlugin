@@ -20,13 +20,15 @@ const Dot ={
 
 interface Props extends PanelProps<SimpleOptions> {}
 
-export class SimplePanel extends PureComponent<Props> {
+export class Panel extends PureComponent<Props> {
   
   render() {
     return <div>
     <Annotation
     src="https://source.unsplash.com/random/800x600"
     annotations={[Dot]}
+    value={{}}
+    disableOverlay={true}
   /></div>;
   }
 }

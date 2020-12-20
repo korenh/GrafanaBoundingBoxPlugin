@@ -1,5 +1,5 @@
 import { PanelPlugin } from '@grafana/data';
 import { SimpleOptions } from './types';
-import { SimplePanel } from './SimplePanel';
+import { Panel } from './panel';
 
-export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel);
+export const plugin = new PanelPlugin<SimpleOptions>(Panel);
