@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import { PanelProps } from '@grafana/data';
 import { SimpleOptions } from 'types';
-const Annotation = require('react-image-annotation');
-const RectangleSelector = require('react-image-annotation/lib/selectors');
+const Annotation = require('react-image-annotation').Annotation;
+const RectangleSelector = require('react-image-annotation/lib/selectors').RectangleSelector;
 
 const Dot ={
   geometry:{
-    type:RectangleSelector.RectangleSelector.TYPE,
+    type:RectangleSelector.TYPE,
     x:0,
     y:0,
     width: 50,
@@ -24,7 +24,7 @@ export class SimplePanel extends PureComponent<Props> {
   
   render() {
     return <div>
-    <Annotation.Annotation
+    <Annotation
     src="https://source.unsplash.com/random/800x600"
     annotations={[Dot]}
   /></div>;
