@@ -1,9 +1,9 @@
 import { PanelPlugin } from '@grafana/data';
-import { SimpleOptions } from './types';
 import React, { PureComponent } from 'react';
 import { PanelProps } from '@grafana/data';
 const Annotation = require('react-image-annotation').Annotation;
 const RectangleSelector = require('react-image-annotation/lib/selectors').RectangleSelector;
+
 
 export class Panel extends PureComponent<PanelProps<SimpleOptions>> {
   
@@ -24,8 +24,8 @@ export class Panel extends PureComponent<PanelProps<SimpleOptions>> {
           "height": 50,
         },
         "data":{
-          "text":"korenl",
-          "id":"korenl"
+          "text":"koreno",
+          "id":"koreno"
         }
       }]}
       value={{}}
@@ -36,3 +36,9 @@ export class Panel extends PureComponent<PanelProps<SimpleOptions>> {
   
   
 export const plugin = new PanelPlugin(Panel);
+
+export interface SimpleOptions {
+  text: string;
+  showSeriesCount: boolean;
+  seriesCountSize: 'sm' | 'md' | 'lg';
+}
