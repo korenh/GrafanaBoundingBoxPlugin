@@ -3,6 +3,8 @@
   "name": "Anotation",
   "id": "Anotation",
 
+  "dataFormats":["results"],
+
   "info": {
     "description": "Anotation",
     "author": {
