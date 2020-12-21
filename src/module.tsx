@@ -9,7 +9,7 @@ export class Panel extends PureComponent<PanelProps<SimpleOptions>> {
   
     render() {
 
-      //From your panel data mtach the annotations to tge right format
+      //From your panel data match the annotations to the right format
       console.log(this.props.data) 
 
       return <div>
