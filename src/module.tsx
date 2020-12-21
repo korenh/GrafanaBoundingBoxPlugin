@@ -5,9 +5,13 @@ import { PanelProps } from '@grafana/data';
 const Annotation = require('react-image-annotation').Annotation;
 const RectangleSelector = require('react-image-annotation/lib/selectors').RectangleSelector;
 
-export class Panel extends PureComponent<PanelProps> {
+export class Panel extends PureComponent<PanelProps<SimpleOptions>> {
   
     render() {
+
+      //From your panel data mtach the annotations to tge right format
+      console.log(this.props.data) 
+
       return <div>
       <Annotation
       src="https://source.unsplash.com/random/800x600"
@@ -20,8 +24,8 @@ export class Panel extends PureComponent<PanelProps> {
           "height": 50,
         },
         "data":{
-          "text":"korenk",
-          "id":"korenk"
+          "text":"korenl",
+          "id":"korenl"
         }
       }]}
       value={{}}
@@ -31,4 +35,4 @@ export class Panel extends PureComponent<PanelProps> {
   }
   
   
-export const plugin = new PanelPlugin<SimpleOptions>(Panel);
+export const plugin = new PanelPlugin(Panel);
