@@ -5,13 +5,27 @@ const Annotation = require('react-image-annotation').Annotation;
 const RectangleSelector = require('react-image-annotation/lib/selectors').RectangleSelector;
 
 export class Panel extends PureComponent<PanelProps<Options>> {
+
+  state={
+    height:Number,
+    width:Number
+  }
+
+  getMeta(url: string){   
+    var img = new Image();
+    img.src = url
+    img.onload = () => {
+        this.setState({height:img.height , width:img.width})
+    };
+  }
   
     render() {
 
+      this.getMeta(this.props.data.series[0].fields[0].values.get(0).entityId)
       let data = this.props.data.series[0].fields[0].values.get(0);
       let list = [] as any
-      let height = this.props.height
-      let width = this.props.width
+      let height = Number(this.state.height)
+      let width = Number(this.state.width)
       for(let v in data.results){
         let box : {} = {}
         let x1 = data.results[v].boundingBox.topLeft.x
@@ -34,7 +48,7 @@ export class Panel extends PureComponent<PanelProps<Options>> {
         list.push(box)
       }
 
-      return <div>
+      return <div style={{width:"1000"}}>
       <Annotation
       src={data.entityId}
       annotations={list}
@@ -43,7 +57,6 @@ export class Panel extends PureComponent<PanelProps<Options>> {
     /></div>;
     }
   }
-  
   
 export const plugin = new PanelPlugin(Panel);
 
