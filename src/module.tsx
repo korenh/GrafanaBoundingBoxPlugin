@@ -1,6 +1,5 @@
-import { PanelPlugin } from '@grafana/data';
+import { PanelPlugin , PanelProps } from '@grafana/data';
 import React, { PureComponent } from 'react';
-import { PanelProps } from '@grafana/data';
 const Annotation = require('react-image-annotation').Annotation;
 const RectangleSelector = require('react-image-annotation/lib/selectors').RectangleSelector;
 
