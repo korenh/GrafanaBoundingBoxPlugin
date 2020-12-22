@@ -31,13 +31,13 @@ export class Panel extends PureComponent<PanelProps<Options>> {
         let comment = ''
         switch(data.algorithmName){
           case 'ocr':
-            comment = data.results[v].detectionScore
+            comment = data.results[v].predictions[0].text
             break
           case 'faces':
             comment = data.results[v].detectionScore
             break
           case 'object':
-            comment = data.results[v].detectionScore
+            comment = data.results[v].class
             break
           case 'logo':
             comment = data.results[v].detectionScore
