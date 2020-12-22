@@ -48,7 +48,7 @@ export class Panel extends PureComponent<PanelProps<Options>> {
         list.push(box)
       }
 
-      return <div style={{width:"1000"}}>
+      return <div>
       <Annotation
       src={data.entityId}
       annotations={list}
