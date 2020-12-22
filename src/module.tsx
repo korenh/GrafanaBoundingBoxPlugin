@@ -28,6 +28,23 @@ export class Panel extends PureComponent<PanelProps<Options>> {
       let width = Number(this.state.width)
       for(let v in data.results){
         let box : {} = {}
+        let comment = ''
+        switch(data.algorithmName){
+          case 'ocr':
+            comment = data.results[v].detectionScore
+            break
+          case 'faces':
+            comment = data.results[v].detectionScore
+            break
+          case 'object':
+            comment = data.results[v].detectionScore
+            break
+          case 'logo':
+            comment = data.results[v].detectionScore
+            break
+          default:
+            comment = 'Detected'
+        }
         let x1 = data.results[v].boundingBox.topLeft.x
         let y1 = data.results[v].boundingBox.topLeft.y
         let x2 = data.results[v].boundingBox.bottomRight.x
@@ -41,7 +58,7 @@ export class Panel extends PureComponent<PanelProps<Options>> {
             height: ((y2-y1) / height) * 100
           },
           data:{
-            text:'Detected',
+            text:comment,
             id:v
           }
         }
