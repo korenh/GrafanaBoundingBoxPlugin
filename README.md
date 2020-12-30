@@ -24,7 +24,7 @@ docker restart grafana
 
 _inside index file paste_
 
-fullpath -> ./node_modules/react-image-annotation/es/index.js
+./node_modules/react-image-annotation/es/index.js
 
 Copy Paste in file 
 
