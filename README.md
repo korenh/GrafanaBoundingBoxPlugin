@@ -2,7 +2,7 @@
 
 ## BoundingBox Plugin
 
-<img src="./src/img/logo.svg" width="200">
+<img src="./src/img/logo.svg" width="250">
 
 _To run Grafana with pressistant volume locally_
 
