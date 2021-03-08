@@ -4,7 +4,7 @@
 
 <img src="./sample/example.png" height="300">
 
-_To run Grafana with pressistant volume locally_
+_To run Grafana + pressistant volume locally_
 
 ```bash
 docker run -d -p 3000:3000 --name=grafana -v ${PWD}/plugins:/var/lib/grafana/plugins grafana/grafana
