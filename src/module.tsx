@@ -20,34 +20,19 @@ export class Panel extends PureComponent<PanelProps<Options>> {
   
     render() {
 
-      this.getMeta(this.props.data.series[0].fields[0].values.get(0).entityId)
-      let data = this.props.data.series[0].fields[0].values.get(0);
+      // *Pay attention to your data structure* //
+
+      let data = this.props.data.series[0].fields[0].values.get(0); 
+      this.getMeta(data.ImageURL) 
       let list = [] as any
       let height = Number(this.state.height)
       let width = Number(this.state.width)
-      for(let v in data.results){
+      for(let v in data){
         let box : {} = {}
-        let comment = ''
-        switch(data.algorithmName){
-          case 'ocr':
-            comment = data.results[v].predictions[0].text
-            break
-          case 'faces':
-            comment = data.results[v].detectionScore
-            break
-          case 'object':
-            comment = data.results[v].class
-            break
-          case 'logo':
-            comment = data.results[v].detectionScore
-            break
-          default:
-            comment = 'Detected'
-        }
-        let x1 = data.results[v].boundingBox.topLeft.x
-        let y1 = data.results[v].boundingBox.topLeft.y
-        let x2 = data.results[v].boundingBox.bottomRight.x
-        let y2 = data.results[v].boundingBox.bottomRight.y
+        let x1 = data.topLeft.x
+        let y1 = data.topLeft.y
+        let x2 = data.bottomRight.x
+        let y2 = data.bottomRight.y
         box = {
           geometry:{
             type:RectangleSelector.TYPE,
@@ -57,8 +42,8 @@ export class Panel extends PureComponent<PanelProps<Options>> {
             height: ((y2-y1) / height) * 100
           },
           data:{
-            text:comment,
-            id:v
+            text:data.name,
+            id:data.id
           }
         }
         list.push(box)
@@ -66,7 +51,7 @@ export class Panel extends PureComponent<PanelProps<Options>> {
 
       return <div>
       <Annotation
-      src={data.entityId}
+      src={data.ImageURL}
       annotations={list}
       value={{}}
       disableOverlay={true}
